@@ -4,7 +4,7 @@ let erros = [];
  * 
  */
 /** gera um numero aleatorio entre 1 a 100 */
-let sorteado = Math.floor(Math.random() * 100) + 1;
+let sorteado = Math.floor(Math.random() * 10) + 1;
 
 /** declara a constante com o numero de chances */
 
@@ -20,7 +20,7 @@ function apostarNumero(){
 
 
     //valida o numero
-    if (numero <= 0 || numero > 100 || isNaN(numero)) {
+    if (numero <= 0 || numero > 10|| isNaN(numero)) {
 
         alert("Informe um número válido....");
         InNumero.focus();
@@ -96,5 +96,14 @@ InNumero.focus();
 
 
 }
+
 let BtApostar = document.getElementById("BtApostar");
 BtApostar.addEventListener("click", apostarNumero);
+
+function jogarNovamente(){
+
+    location.reload();
+
+}
+let BtJogar = document.getElementById("BtJogar");
+BtJogar.addEventListener("click", jogarNovamente);
