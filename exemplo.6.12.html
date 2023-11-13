@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exemplo 6.12 | pg 191</title>
+</head>
+<body>
+    <script>
+        let parcelas  = Number(prompt("Quantas Parcelas"));
+
+        let lista = "";
+
+        let dia, mes, ano, diaZero, mesZero;
+
+        let data = new Date();
+
+        for (var i = 1; i <= parcelas; i++) {
+
+            data.setMonth(data.getMonth() + 1); //aumenta 1 mes na data
+
+            dia = data.getDate();
+            mes = data.getMonth();
+            ano = data.getFullYear(); //mes varia de 0 a 11, po isso,  +1
+
+        }
+
+        diaZero = dia < 10 ? "0" + dia : dia; 
+        mesZero = mes < 10 ? "0" + mes : mes; 
+
+        
+
+    </script>
+</body>
+</html>
