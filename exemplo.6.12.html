@@ -23,12 +23,18 @@
             mes = data.getMonth();
             ano = data.getFullYear(); //mes varia de 0 a 11, po isso,  +1
 
-        }
+        
 
         diaZero = dia < 10 ? "0" + dia : dia; 
         mesZero = mes < 10 ? "0" + mes : mes; 
 
+        //concatena as parcelas na variavel linha com uma quebra de linha ao final
+
+        lista += i + "ª parcela: " + diaZero + "/" + mesZero + "/" + ano + "\n"; 
         
+    }
+
+    alert (lista);
 
     </script>
 </body>
