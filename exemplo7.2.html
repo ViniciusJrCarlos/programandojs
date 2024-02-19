@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo PG 200 </title>
+</head>
+<body>
+    <script>
+        function calcularMedia() {
+
+            if(arguments.length == 0) {
+
+                alert("Informe, no minimo, uma nota");
+                return;
+            }
+
+            let soma = 0; //vai acumular a soma das notas
+            let numNotas = arguments.length; //obtem a quant de argumentos
+
+            for(let i = 0; i < numNotas; i++) {
+
+                soma += arguments[i];
+            }
+
+            let media = soma / numNotas;
+
+            alert("Média das Notas: " + media.toFixed(1));
+         }
+
+         //exemplos de chamada de calcularMedia() com nº de argumentos diferentes
+
+         calcularMedia(5, 6, 8);
+         calcularMedia(2, 10);
+         calcularMedia(7.5, 10, 8, 9.5);
+         calcularMedia();
+         
+    </script>
+</body>
+</html>
