@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo pg 210 | pizzaria </title>
+</head>
+
+    <h1> Pizzaria avenida </h1>
+    <p>
+        Item do Pedido:
+        <input type="radio" name="produto" id="rbPizza" checked autofocus> Pizza
+        <input type="radio" name="produto" id="rbBebida"> Bedida
+
+        <span>Item: </span>
+        <select id="inPizza">
+            <option value="media">Pizza Média</option>
+            <option value="grande">Pizza Grande</option>
+            <option value="familia">Pizza Familia</option>
+        </select>
+
+        <span>Bebida</span>
+        <select id="inBebida">
+            <option value="refri">Refrigerante Litro</option>
+            <option value="suco">Jarra de Suco</option>
+            <option value="agua">Agua Mineral</option>
+        </select>
+
+
+    </p>
+
+    <p>Detalhe do Item:
+    <input type="text" id="inDetalhes" class="detalhes">
+    <input type="button" value="Adicionar" id="btAdicionar">    
+    </p>
+
+    <pre id="outPedido"></pre>
+    <script src="js/exemplo7.6.js"></script>
+</body>
+</html>
