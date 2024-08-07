@@ -52,4 +52,8 @@ function incluirAposta() {
 
 }
 
-//cria 
+//cria referencia ao botao e  associa a ocorrencia do evento click a function
+
+let btApostar = document.getElementById("btApostar");
+btApostar.addEventListener("click", incluirAposta);
+
