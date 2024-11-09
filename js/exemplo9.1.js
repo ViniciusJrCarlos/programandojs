@@ -34,3 +34,56 @@ function adicionarTarefa() {
 let btAdicionar = document.getElementById("btAdicionar");
 
 btAdicionar.addEventListener("click", adicionarTarefa);
+
+
+
+
+function selecionarTarefa() {
+
+
+    let h5 = document.getElementsByTagName("h5");
+    let numH5 = h5.length;
+
+    if(numH5 == 0) {
+
+        alert("Não há tarefas para selecionar");
+
+        return;
+
+    }
+
+    let aux = -1; //variavel auxiliar para indicar linha selecionada
+
+    //pecorre a lista de elementos h5 inseridos na pagina
+
+    for(let i = 0; i < numH5; i++) {
+
+        //se tag é da class tarefasSelecionada (esta selecionada)
+
+        if(h5[i].className == "tarefaSelecionada") {
+
+            h5[i].className = "tarefaNormal"; //troca para normal
+
+            aux = i; //muda de valor para variavel auxiliar
+            break;
+
+
+        }
+    }
+
+    //se a linha que está selecionada é a ultima, ira voltar para a primeira
+
+    if(aux == numH5 -1){
+
+        aux = -1;
+
+    }
+
+    h5[aux + 1].className = "tarefaSelecionada"; //muda de estilo da proxima tag h5
+
+
+
+}
+
+let btSelecionar = document.getElementById("btSelecionar");
+let btSelecionar.addEventListener("click", selecionarTarefa);
