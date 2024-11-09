@@ -10,7 +10,7 @@ function incluirAposta() {
 
     //se vazios ou not a number (nan)
 
-    if(nome == "" || peso == 0 ||isNaN(peso)) {
+    if(nome == "" || peso == 0 || isNaN(peso)) {
 
         alert("Informe nome e peso da aposta"); //exibe alerta
         inNome.focus(); //joga cursor em nome
@@ -55,5 +55,5 @@ function incluirAposta() {
 //cria referencia ao botao e  associa a ocorrencia do evento click a function
 
 let btApostar = document.getElementById("btApostar");
-btApostar.addEventListener("click", incluirAposta);
+btApostar.addEventListener("Click", incluirAposta);
 
