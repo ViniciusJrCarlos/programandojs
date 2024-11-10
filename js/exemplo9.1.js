@@ -36,8 +36,6 @@ let btAdicionar = document.getElementById("btAdicionar");
 btAdicionar.addEventListener("click", adicionarTarefa);
 
 
-
-
 function selecionarTarefa() {
 
 
@@ -52,7 +50,8 @@ function selecionarTarefa() {
 
     }
 
-    let aux = -1; //variavel auxiliar para indicar linha selecionada
+    let aux = -1; 
+    //variavel auxiliar para indicar linha selecionada
 
     //pecorre a lista de elementos h5 inseridos na pagina
 
@@ -86,4 +85,99 @@ function selecionarTarefa() {
 }
 
 let btSelecionar = document.getElementById("btSelecionar");
-let btSelecionar.addEventListener("click", selecionarTarefa);
+
+btSelecionar.addEventListener("click", selecionarTarefa);
+
+
+function retirarSelecionada() {
+
+    //cria referencia ao elemento que irá perder um filho
+
+    let divQuadro = document.getElementById("divQuadro");
+    let h5 = document.getElementsByTagName("h5");
+    let numH5 = h5.length;
+
+    let aux = -1;
+
+    //pecorre a lista de elementos h5 inseridos na pagina
+
+    for (let i = 0; i < numH5; i++) {
+
+        //verifica className da tag h5
+
+        if(h5[i].className == "tarefaSelecionada") {
+
+            aux = i;
+            break;
+
+
+        }
+
+    }
+
+    //se nao ha tarefa selecionada ou se a lista esta vazia
+
+    if(aux == -1) {
+
+        alert("Selecione a tarefa para remove - la ");
+        return;
+
+    }
+
+    //solicita confirmacao exibindo a tag selecionada
+  if( confirm("Confirma Exclusao de '" + h5[aux].textContent + "' ?")) {
+
+    divQuadro.removeChild(h5[aux]); //remove um dos filhos de divQuadro
+
+
+
+
+  }
+
+
+
+}
+
+let btRetirar = document.getElementById("btRetirar");
+btRetirar.addEventListener("click", retirarSelecionada);
+
+function gravarTarefas() {
+
+    let h5 = document.getElementsByTagName("h5");
+    let numH5 = h5.length;
+
+    if(numH5 == 0) {
+
+        alert("Nao ha tarefas para serem salvas");
+        return;
+
+
+    }
+
+    let tarefas = "";
+
+    //percorre a lista de h5 inseridos na pagina
+
+    for(let i = 0; i < numH5; i++) {
+
+        tarefas += h5[i].textContent + ";"; 
+
+    }
+
+    //grava em local storage as tarefas e remove o ultimo 
+
+    localStorage.setItem("tarefasDia", tarefas.substr(0, tarefas.length -1));
+
+    //confere se dados foram armazenados em local storage
+
+    if(localStorage.getItem("tarefasDia")) {
+
+        alert("OK! Tarefas Salvas");
+
+
+    }
+
+}
+
+    let btGravar =  document.getElementById("btGravar");
+    btGravar.addEventListener("click", gravarTarefas);
