@@ -12,7 +12,7 @@ function exibirMoedas() {
 
     //texto alternativo das imagens para questoes de acessibilidade
 
-    let alt1_00 = "Moedas em real";
+    let alt1_00 = "Moedas em dolar";
     let alt0_50 = "Moedas de cinquenta centavos";
     let alt0_25 = "Moedas de vinte e cinco centavos";
     let alt0_10 = "Moedas de dez centavos";
